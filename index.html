@@ -21,10 +21,17 @@
 				<!-- use ng-init directive to initilize tab value to 1 upon page load -->
 				<section ng-init="tab = 1">
 					<ul class="nav nav-pills">
-						<!-- use ng-click directive to create tabs and update tab expression -->
-						<li> <a href ng-click="tab = 1"> Description</a> </li>
-						<li> <a href ng-click="tab = 2"> Specification</a> </li>
-						<li> <a href ng-click="tab = 3"> Reviews</a> </li>
+						<!-- use ng-class directive to add css active class if tab is selected-->
+						<li ng-class="{active:tab === 1}">
+							<!-- use ng-click directive to create tabs and update tab expression -->
+							<a href ng-click="tab = 1"> Description</a> 
+						</li>
+						<li ng-class="{active:tab === 2}"> 
+							<a href ng-click="tab = 2"> Specification</a> 
+						</li>
+						<li ng-class="{active:tab === 3}"> 
+							<a href ng-click="tab = 3"> Reviews</a> 
+						</li>
 					</ul>
 
 					<!-- use ng-show to display panel in correct tab only-->
