@@ -9,6 +9,23 @@
 		this.products = gems;
 	});
 
+	//define controller for Panel section that holds Description/Spec/Reviews info.
+	app.controller('PanelController', function(){
+		//init tab to 1
+		this.tab = 1;
+
+		//function to set tab property to selected tab
+		this.selectTab = function(setTab) {
+			this.tab = setTab;
+		};
+
+		//returns true or false if tab is selected or not
+		this.isSelected = function(checkTab){
+			return this.tab == checkTab;
+		};
+
+	});
+
 	var gems = [ 
 	{
 		name: 'Dodecahedron Gem',
