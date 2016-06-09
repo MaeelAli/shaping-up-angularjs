@@ -11,7 +11,7 @@
 
 	var gems = [ 
 	{
-		name: 'Dodecahedron',
+		name: 'Dodecahedron Gem',
 		price: 2.95,
 		description: 'Some gems havce hidden qualities beyond their luster, beyond their shine... Dodeca is one of those gems',
 		canPurchase: true,

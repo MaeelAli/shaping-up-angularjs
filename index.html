@@ -7,16 +7,30 @@
 
 	<!-- use ng-controller directive to link body to StoreController, using alias store -->
 	<body ng-controller="StoreController as store">
-		<!-- use ng-hide directive to hide div if item sold out -->
-		<!-- use ng-repeat directive to iterate through products property and display div for each gem-->
+		<!-- LEVEL 2: CODE -->
+		<ul class ="list-group">
+			<li class="list-group-item" ng-repeat="product in store.products">
+				<h3>
+					{{product.name}}
+					<!-- pipe output of product.price to currency filter-->
+					<em class="pull-right">{{product.price | currency}}</em>
+				</h3>
+			</li>
+		</ul>
+
+		<!-- LEVEL 1: CODE -->
+<!--	
+		<!- - use ng-hide directive to hide div if item sold out - ->
+		<!- - use ng-repeat directive to iterate through products property and display div for each gem- ->
 		<div ng-repeat="product in store.products" ng-hide="product.soldOut">
 			<h1>{{product.name}} </h1>
 			<h2> ${{product.price}} </h2>
 			<p> {{product.description}} </p>
-			<!-- use ng-show directive to only show button if canPurchase is true-->
+
+			<!- - use ng-show directive to only show button if canPurchase is true- ->
 			<button ng-show="product.canPurchase">Add to Cart </button>
 		</div>
-
+-->
 		<script type="text/javascript" src="angular.min.js"></script>
 		<script type="text/javascript" src="app.js"></script>
 	</body>
