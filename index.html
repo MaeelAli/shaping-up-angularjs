@@ -9,12 +9,15 @@
 	<body ng-controller="StoreController as store">
 		<!-- LEVEL 2: CODE -->
 		<ul class ="list-group">
-			<li class="list-group-item" ng-repeat="product in store.products">
+			<li class="list-group-item" ng-repeat="product in store.products | orderBy:'-price'">
 				<h3>
 					{{product.name}}
 					<!-- pipe output of product.price to currency filter-->
 					<em class="pull-right">{{product.price | currency}}</em>
+					<!-- use ng-src directive to evaluate expression before loading image-->
+					<img ng-src="{{product.images[0].thumb}}"/>
 				</h3>
+
 			</li>
 		</ul>
 
