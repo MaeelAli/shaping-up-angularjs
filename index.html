@@ -18,6 +18,32 @@
 					<img ng-src="{{product.images[0].thumb}}"/>
 				</h3>
 
+				<!-- use ng-init directive to initilize tab value to 1 upon page load -->
+				<section ng-init="tab = 1">
+					<ul class="nav nav-pills">
+						<!-- use ng-click directive to create tabs and update tab expression -->
+						<li> <a href ng-click="tab = 1"> Description</a> </li>
+						<li> <a href ng-click="tab = 2"> Specification</a> </li>
+						<li> <a href ng-click="tab = 3"> Reviews</a> </li>
+					</ul>
+
+					<!-- use ng-show to display panel in correct tab only-->
+					<div class="panel" ng-show="tab === 1">
+						<h4>Description</h4>
+						<p>{{product.description}}</p>
+					</div>
+
+					<div class="panel" ng-show="tab === 2">
+						<h4>Specifications</h4>
+						<blockquote>None Yet</blockquote>
+					</div>
+
+					<div class="panel" ng-show="tab === 3">
+						<h4>Reviews</h4>
+						<blockquote>None Yet</blockquote>
+					</div>
+				</section>
+
 			</li>
 		</ul>
 
