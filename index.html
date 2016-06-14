@@ -55,7 +55,7 @@
 							<cite>-{{review.author}}</cite>
 						</blockquote>
 
-						<form name="reviewForm" class="form-group">
+						<form name="reviewForm">
 
 						<!-- Live Preview of review to be submitted -->
 							<blockquote>
@@ -64,23 +64,32 @@
 								<cite>- {{review.author}}</cite>
 							</blockquote>
 
-							<!-- use ng-model directive to bind select to stars property in live preview-->
-							<select ng-model="review.stars" class="form-control">
-								<option value="1">1 star</option>
-								<option value="2">2 stars</option>
-								<option value="3">3 stars</option>
-								<option value="4">4 stars</option>
-								<option value="5">5 stars</option>
-							</select>
-							<br/>
-							<!-- use ng-model directive to bind textarea to body property in live preview-->
-							<textarea ng-model="review.body" class="form-control"></textarea>
-							
-							<label for="email">by:</label>
+							<h4>Submit a Review</h4>
 
-							<!-- use ng-model directive to bind email textbox to author property in live preview -->
-							<input ng-model="review.author" type="email" class="form-control"/>
-							<input type="submit" value="Submit" class="btn btn-default"/> 
+							<!-- use ng-model directive to bind select to stars property in live preview-->
+							<fieldset class="form-group">
+								<!-- use ng-options to create options for select box-->
+								<select ng-model="review.stars" ng-options="stars for stars in [5,4,3,2,1]" class="form-control">
+									<option value="">Rate the Product</option>
+								</select>
+
+							</fieldset>
+
+							<fieldset class="form-group">
+								<!-- use ng-model directive to bind textarea to body property in live preview-->
+								<textarea ng-model="review.body" placeholder="Write a short review of the product..." title="Review" class="form-control"></textarea>
+							</fieldset>
+
+							<fieldset class="form-group">
+								<!-- use ng-model directive to bind email textbox to author property in live preview -->
+								<input ng-model="review.author" type="email" placeholder="jimmyDean@example.org" title="Email" class="form-control"/>
+							</fieldset>
+
+
+							<fieldset class="form-group">
+								<input type="submit" value="Submit Review" class="btn btn-primary pull-right"/> 
+							</fieldset>
+								
 
 						</form>
 
