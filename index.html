@@ -56,17 +56,30 @@
 						</blockquote>
 
 						<form name="reviewForm" class="form-group">
-							<select class="form-control">
+
+						<!-- Live Preview of review to be submitted -->
+							<blockquote>
+								<b> Stars: {{review.stars}} </b>
+								{{review.body}}<br/>
+								<cite>- {{review.author}}</cite>
+							</blockquote>
+
+							<!-- use ng-model directive to bind select to stars property in live preview-->
+							<select ng-model="review.stars" class="form-control">
 								<option value="1">1 star</option>
 								<option value="2">2 stars</option>
 								<option value="3">3 stars</option>
-								<option value="4">3 stars</option>
-								<option value="5">4 stars</option>
+								<option value="4">4 stars</option>
+								<option value="5">5 stars</option>
 							</select>
 							<br/>
-							<textarea class="form-control"></textarea>
+							<!-- use ng-model directive to bind textarea to body property in live preview-->
+							<textarea ng-model="review.body" class="form-control"></textarea>
+							
 							<label for="email">by:</label>
-							<input type="email" class="form-control"/>
+
+							<!-- use ng-model directive to bind email textbox to author property in live preview -->
+							<input ng-model="review.author" type="email" class="form-control"/>
 							<input type="submit" value="Submit" class="btn btn-default"/> 
 
 						</form>
