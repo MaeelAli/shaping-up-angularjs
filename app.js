@@ -41,6 +41,18 @@
 				thumb: "./img/dodecahedron-02-thumb.jpg"
 			}
 		],
+		reviews: [
+			{
+				stars: 5,
+				body: "I love this product!",
+				author: "enzo@amore.com"
+			},
+			{
+				stars: 1,
+				body: "This product sucks!",
+				author: "couple@haters.com"
+			}
+		],
 		canPurchase: true,
 		soldOut: false
 	},
@@ -52,6 +64,13 @@
 			{
 				full: "./img/pentagonal-full.jpg",
 				thumb: "./img/pentagonal-thumb.jpg"
+			}
+		],
+		reviews: [
+			{
+				stars: 1,
+				body: "There's only 1 word to describe this... and I am going to spell it out for you... S A W F T SSSSAWWFFFTTT!",
+				author: "big@cass.com"
 			}
 		],
 		canPurchase: true,
