@@ -26,6 +26,11 @@
 
 	});
 
+	//define controller for the Review Form.
+	app.controller("ReviewController", function(){
+		this.review = {};
+	});
+
 	var gems = [ 
 	{
 		name: 'Dodecahedron Gem',

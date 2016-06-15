@@ -55,13 +55,15 @@
 							<cite>-{{review.author}}</cite>
 						</blockquote>
 
-						<form name="reviewForm">
+
+						<!-- use ng-controller directive to link form to ReviewController in app.js-->
+						<form name="reviewForm" ng-controller="ReviewController as reviewCtrl">
 
 						<!-- Live Preview of review to be submitted -->
 							<blockquote>
-								<b> Stars: {{review.stars}} </b>
-								{{review.body}}<br/>
-								<cite>- {{review.author}}</cite>
+								<b> Stars: {{reviewCtrl.review.stars}} </b>
+								{{reviewCtrl.review.body}}<br/>
+								<cite>- {{reviewCtrl.review.author}}</cite>
 							</blockquote>
 
 							<h4>Submit a Review</h4>
@@ -69,7 +71,7 @@
 							<!-- use ng-model directive to bind select to stars property in live preview-->
 							<fieldset class="form-group">
 								<!-- use ng-options to create options for select box-->
-								<select ng-model="review.stars" ng-options="stars for stars in [5,4,3,2,1]" class="form-control">
+								<select ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]" class="form-control">
 									<option value="">Rate the Product</option>
 								</select>
 
@@ -77,12 +79,12 @@
 
 							<fieldset class="form-group">
 								<!-- use ng-model directive to bind textarea to body property in live preview-->
-								<textarea ng-model="review.body" placeholder="Write a short review of the product..." title="Review" class="form-control"></textarea>
+								<textarea ng-model="reviewCtrl.review.body" placeholder="Write a short review of the product..." title="Review" class="form-control"></textarea>
 							</fieldset>
 
 							<fieldset class="form-group">
 								<!-- use ng-model directive to bind email textbox to author property in live preview -->
-								<input ng-model="review.author" type="email" placeholder="jimmyDean@example.org" title="Email" class="form-control"/>
+								<input ng-model="reviewCtrl.review.author" type="email" placeholder="jimmyDean@example.org" title="Email" class="form-control"/>
 							</fieldset>
 
 
