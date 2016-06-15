@@ -57,7 +57,7 @@
 
 
 						<!-- use ng-controller directive to link form to ReviewController in app.js-->
-						<form name="reviewForm" ng-controller="ReviewController as reviewCtrl">
+						<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
 
 						<!-- Live Preview of review to be submitted -->
 							<blockquote>

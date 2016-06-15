@@ -29,6 +29,14 @@
 	//define controller for the Review Form.
 	app.controller("ReviewController", function(){
 		this.review = {};
+
+		this.addReview = function(product) {
+			//add current review to product's list of reviews
+			product.reviews.push(this.review);
+
+			//clear form and live preview after submitting review
+			this.review = {};
+		}
 	});
 
 	var gems = [ 
