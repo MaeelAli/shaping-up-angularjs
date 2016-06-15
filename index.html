@@ -57,7 +57,7 @@
 
 
 						<!-- use ng-controller directive to link form to ReviewController in app.js-->
-						<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+						<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
 
 						<!-- Live Preview of review to be submitted -->
 							<blockquote>
@@ -71,7 +71,7 @@
 							<!-- use ng-model directive to bind select to stars property in live preview-->
 							<fieldset class="form-group">
 								<!-- use ng-options to create options for select box-->
-								<select ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]" class="form-control">
+								<select ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]" class="form-control" required>
 									<option value="">Rate the Product</option>
 								</select>
 
@@ -79,14 +79,16 @@
 
 							<fieldset class="form-group">
 								<!-- use ng-model directive to bind textarea to body property in live preview-->
-								<textarea ng-model="reviewCtrl.review.body" placeholder="Write a short review of the product..." title="Review" class="form-control"></textarea>
+								<textarea ng-model="reviewCtrl.review.body" placeholder="Write a short review of the product..." title="Review" class="form-control" required></textarea>
 							</fieldset>
 
 							<fieldset class="form-group">
 								<!-- use ng-model directive to bind email textbox to author property in live preview -->
-								<input ng-model="reviewCtrl.review.author" type="email" placeholder="jimmyDean@example.org" title="Email" class="form-control"/>
+								<input ng-model="reviewCtrl.review.author" type="email" placeholder="jimmyDean@example.org" title="Email" class="form-control" required/>
 							</fieldset>
 
+							<!-- debugging code to check if form is valid-->
+							<div> reviewForm is {{reviewForm.$valid}} </div>
 
 							<fieldset class="form-group">
 								<input type="submit" value="Submit Review" class="btn btn-primary pull-right"/> 
