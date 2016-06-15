@@ -31,6 +31,9 @@
 		this.review = {};
 
 		this.addReview = function(product) {
+			//add createdOn field with Date.now()
+			this.review.createdOn = Date.now();
+
 			//add current review to product's list of reviews
 			product.reviews.push(this.review);
 
@@ -58,12 +61,14 @@
 			{
 				stars: 5,
 				body: "I love this product!",
-				author: "enzo@amore.com"
+				author: "enzo@amore.com",
+				createdOn: 1397490980837
 			},
 			{
 				stars: 1,
 				body: "This product sucks!",
-				author: "couple@haters.com"
+				author: "couple@haters.com",
+				createdOn: 1397490980837
 			}
 		],
 		canPurchase: true,
@@ -83,7 +88,8 @@
 			{
 				stars: 1,
 				body: "There's only 1 word to describe this... and I am going to spell it out for you... S A W F T SSSSAWWFFFTTT!",
-				author: "big@cass.com"
+				author: "big@cass.com",
+				createdOn: 1397490980837
 			}
 		],
 		canPurchase: true,
