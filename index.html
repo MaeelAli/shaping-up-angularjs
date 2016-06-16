@@ -12,9 +12,9 @@
 		<ul class ="list-group">
 			<li class="list-group-item" ng-repeat="product in store.products | orderBy:'-price'">
 				
-				<!-- used ng-include directive to inject template into index.html-->
-				<h3 ng-include="'./product-title.html'">
-					
+				<!-- used custom directive to inject product-title template into index.html-->
+				<h3>
+					<product-title></product-title>				
 				</h3>
 
 				<!-- use ng-controller directive to link section to PanelController in app.js-->
